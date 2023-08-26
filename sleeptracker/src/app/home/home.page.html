@@ -1,0 +1,39 @@
+<ion-header [translucent]="false">
+  <ion-toolbar>
+    <ion-title style="text-align: center" size="default">SleepTracker</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">SleepTracker</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-row>
+    <ion-col><item-item class="time">
+      <h1>{{ time | date: 'H:mm'}}</h1>
+      <h2>{{ time | date}}</h2>
+    </item-item></ion-col>
+  </ion-row>
+  <ion-list lines="none" class="ion-padding">
+    <ion-list-header size="small">Select Option Below:</ion-list-header>
+   
+    <ion-item class="ion-justify-content-center">
+      <ion-button expand="block" size="default" color="tertiary" (click)="openModal()"><ion-icon name="moon-outline"></ion-icon>&nbsp;&nbsp;Log Overnight Sleep</ion-button>
+    </ion-item>
+    <ion-item class="ion-justify-content-center">
+      <ion-button expand="block" size="default" color="tertiary" (click)="openModal_sleepy()">Log Daytime Sleepiness&nbsp;</ion-button>
+    </ion-item>
+    <ion-item>_______________________</ion-item>
+    <ion-item class="ion-justify-content-center">
+        <ion-button expand="block" size="default" color="tertiary" (click)="nextpage()"><ion-icon name="book-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Sleep Log&nbsp;&nbsp;&nbsp;&nbsp;</ion-button>
+    </ion-item>
+  </ion-list>
+  <p><ion-icon name="bed-outline"></ion-icon></p>
+</ion-content>
+
+<ion-footer>SleepTracker<ion-footer>
+<!--
+  
+-->

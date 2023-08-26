@@ -1,0 +1,73 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title style="text-align: center" size="default"></ion-title>
+    <ion-buttons slot="start">
+    <ion-button fill="clear" color="tertiary" (click)="closeModal()">
+      back
+    </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- <ion-button slot = "start" fill="clear" color="tertiary" (click)="closeModal()"> -->
+<ion-content>
+  <p>Log your Sleep</p>
+  <ion-list lines="none" class="ion-no-padding"> 
+    <ion-item>
+      <ion-label>Sleep Time</ion-label>
+      <ion-input
+        placeholder="Enter here"
+        value="{{ sleepStart | date: 'MM.dd.yyyy HH:MM:SS' }}"
+        id="sleepStart"
+        class="ion-text-end"
+      ></ion-input>
+      <ion-popover trigger="sleepStart" size="fixed">
+        <ng-template>
+          <ion-datetime
+            [(ngModel)]="sleepStart"
+            [showDefaultButtons]="true"
+          ></ion-datetime>
+        </ng-template>
+      </ion-popover>
+    </ion-item>
+    <ion-item>
+      <ion-label>Wake Up Time</ion-label>
+      <ion-input
+        placeholder="Enter here"
+        value="{{ sleepEnd | date: 'MM.dd.yyyy HH:MM:SS' }}"
+        id="sleepEnd"
+        class="ion-text-end"
+      ></ion-input>
+      <ion-popover trigger="sleepEnd" size="fixed">
+        <ng-template>
+          <ion-datetime
+            [(ngModel)]="sleepEnd"
+            [showDefaultButtons]="true"
+          ></ion-datetime>
+        </ng-template>
+      </ion-popover>
+    </ion-item>
+  </ion-list>
+
+  <ion-row>
+    <ion-col style="text-align: center">
+      <ion-button color="tertiary" (click)="createLog()">Submit</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+
+<!--
+
+  
+   <ion-item>
+      Select Wake Time
+    </ion-item>
+    <ion-item>
+      <ion-datetime-button datetime="datetime2"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime size ="cover" [showDefaultButtons]="true" id="datetime2" [(ngModel)]="sleepEnd"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+-->
